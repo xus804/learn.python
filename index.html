@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn Python Interactive Tutorial</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/brython/3.12.3/brython.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/brython/3.12.3/brython_stdlib.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body onload="brython()">
+    <div class="container">
+        <div class="header">
+            <h1>🐍 Learn Python</h1>
+            <p>Interactive tutorial with hands-on practice</p>
+        </div>
+        
+        <div class="content">
+            <div class="sidebar">
+                <div class="lesson-item active" onclick="showLesson(0)">1. Hello Python!</div>
+                <div class="lesson-item" onclick="showLesson(1)">2. Variables</div>
+                <div class="lesson-item" onclick="showLesson(2)">3. Data Types</div>
+                <div class="lesson-item" onclick="showLesson(3)">4. Math Operations</div>
+                <div class="lesson-item" onclick="showLesson(4)">5. Strings</div>
+                <div class="lesson-item" onclick="showLesson(5)">6. Lists</div>
+                <div class="lesson-item" onclick="showLesson(6)">7. Conditionals</div>
+                <div class="lesson-item" onclick="showLesson(7)">8. Loops</div>
+                <div class="lesson-item" onclick="showLesson(8)">9. Functions</div>
+                <div class="lesson-item" onclick="showLesson(9)">10. Dictionaries</div>
+            </div>
+            
+            <div class="main-content">
+                <div class="lesson active">
+                    <h2>Lesson 1: Hello Python! 👋</h2>
+                    <p>Let's start with the most famous program in programming - printing "Hello, World!" to the screen.</p>
+                    
+                    <div class="code-block">
+                        <code>print("Hello, World!")</code>
+                    </div>
+                    
+                    <p>The <code>print()</code> function displays text on the screen. Whatever you put inside the parentheses (in quotes) will be shown.</p>
+                    
+                    <div class="try-it">
+                        <h4>✏️ Try it yourself:</h4>
+                        <p>Write code to print your name:</p>
+                        <textarea id="code0">print("Your name here")</textarea>
+                        <button onclick="runCode(0)">▶ Run Code</button>
+                        <button onclick="resetCode(0)">↺ Reset</button>
+                        <div class="output" id="output0">Click "Run Code" to see the result!</div>
+                    </div>
+                    
+                    <div class="tip">
+                        <strong>💡 Tip:</strong> You can print multiple things by separating them with commas: <code>print("Hello", "World")</code>
+                    </div>
+                </div>
+                
+                <div class="lesson">
+                    <h2>Lesson 2: Variables 📦</h2>
+                    <p>Variables are like labeled boxes where you store information. You can name them almost anything!</p>
+                    
+                    <div class="code-block">
+                        <code>name = "Alice"<br>age = 25<br>print(name)<br>print(age)</code>
+                    </div>
+                    
+                    <p>Here, <code>name</code> stores text and <code>age</code> stores a number. The <code>=</code> sign assigns values to variables.</p>
+                    
+                    <h3>Variable naming rules:</h3>
+                    <ul>
+                        <li>Can contain letters, numbers, and underscores</li>
+                        <li>Must start with a letter or underscore</li>
+                        <li>Case sensitive: <code>age</code> and <code>Age</code> are different</li>
+                        <li>Can't use reserved words like <code>print</code>, <code>if</code>, etc.</li>
+                    </ul>
+                    
+                    <div class="try-it">
+                        <h4>✏️ Try it yourself:</h4>
+                        <p>Create variables for your favorite color and a lucky number, then print them:</p>
+                        <textarea id="code1">favorite_color = "blue"
+lucky_number = 7
+print(favorite_color)
+print(lucky_number)</textarea>
+                        <button onclick="runCode(1)">▶ Run Code</button>
+                        <button onclick="resetCode(1)">↺ Reset</button>
+                        <div class="output" id="output1">Click "Run Code" to see the result!</div>
+                    </div>
+                </div>
+                
+                <div class="lesson">
+                    <h2>Lesson 3: Data Types 🔢</h2>
+                    <p>Python has several types of data. The main ones are:</p>
+                    
+                    <ul>
+                        <li><strong>int</strong> - Whole numbers: <code>42</code>, <code>-10</code></li>
+                        <li><strong>float</strong> - Decimal numbers: <code>3.14</code>, <code>-0.5</code></li>
+                        <li><strong>str</strong> - Text (strings): <code>"Hello"</code>, <code>'Python'</code></li>
+                        <li><strong>bool</strong> - True or False: <code>True</code>, <code>False</code></li>
+                    </ul>
+                    
+                    <div class="code-block">
+                        <code>x = 10          # int<br>y = 3.14        # float<br>name = "Bob"    # str<br>is_fun = True   # bool<br><br>print(type(x))  # Shows the type</code>
+                    </div>
+                    
+                    <div class="try-it">
+                        <h4>✏️ Try it yourself:</h4>
+                        <p>Create one variable of each type and print them along with their types:</p>
+                        <textarea id="code2">age = 20
+height = 5.9
+name = "Sam"
+student = True
+
+print(age, type(age))
+print(height, type(height))</textarea>
+                        <button onclick="runCode(2)">▶ Run Code</button>
+                        <button onclick="resetCode(2)">↺ Reset</button>
+                        <div class="output" id="output2">Click "Run Code" to see the result!</div>
+                    </div>
+                </div>
+                
+                <div class="lesson">
+                    <h2>Lesson 4: Math Operations ➕➖✖️➗</h2>
+                    <p>Python can do math just like a calculator!</p>
+                    
+                    <div class="code-block">
+                        <code>a = 10 + 5      # Addition (15)<br>b = 10 - 5      # Subtraction (5)<br>c = 10 * 5      # Multiplication (50)<br>d = 10 / 5      # Division (2.0)<br>e = 10 // 3     # Floor division (3)<br>f = 10 % 3      # Modulus - remainder (1)<br>g = 2 ** 3      # Exponent (8)</code>
+                    </div>
+                    
+                    <div class="tip">
+                        <strong>💡 Did you know?</strong> The <code>%</code> operator gives you the remainder. <code>10 % 3</code> = 1 because 10 ÷ 3 = 3 remainder 1.
+                    </div>
+                    
+                    <div class="try-it">
+                        <h4>✏️ Try it yourself:</h4>
+                        <p>Calculate the area of a rectangle (length × width) and print it:</p>
+                        <textarea id="code3">length = 12
+width = 5
+area = length * width
+print("Area:", area)</textarea>
+                        <button onclick="runCode(3)">▶ Run Code</button>
+                        <button onclick="resetCode(3)">↺ Reset</button>
+                        <div class="output" id="output3">Click "Run Code" to see the result!</div>
+                    </div>
+                </div>
+                
+                <div class="lesson">
+                    <h2>Lesson 5: Strings 📝</h2>
+                    <p>Strings are sequences of characters (text). You can do cool things with them!</p>
+                    
+                    <div class="code-block">
+                        <code>message = "Hello"<br>name = "Alice"<br><br># Concatenation (joining)<br>greeting = message + " " + name<br>print(greeting)  # "Hello Alice"<br><br># String methods<br>print(message.upper())    # "HELLO"<br>print(message.lower())    # "hello"<br>print(len(message))       # 5 (length)</code>
+                    </div>
+                    
+                    <h3>String formatting (f-strings):</h3>
+                    <div class="code-block">
+                        <code>name = "Bob"<br>age = 30<br>print(f"My name is {name} and I'm {age}")</code>
+                    </div>
+                    
+                    <div class="try-it">
+                        <h4>✏️ Try it yourself:</h4>
+                        <p>Create a sentence using f-strings with your name and favorite hobby:</p>
+                        <textarea id="code4">name = "Alex"
+hobby = "reading"
+sentence = f"Hi, I'm {name} and I love {hobby}!"
+print(sentence)</textarea>
+                        <button onclick="runCode(4)">▶ Run Code</button>
+                        <button onclick="resetCode(4)">↺ Reset</button>
+                        <div class="output" id="output4">Click "Run Code" to see the result!</div>
+                    </div>
+                </div>
+                
+                <div class="lesson">
+                    <h2>Lesson 6: Lists 📋</h2>
+                    <p>Lists store multiple items in a single variable. They're like shopping lists!</p>
+                    
+                    <div class="code-block">
+                        <code>fruits = ["apple", "banana", "cherry"]<br><br>print(fruits[0])      # "apple" (first item)<br>print(fruits[-1])     # "cherry" (last item)<br>print(len(fruits))    # 3 (number of items)<br><br># Adding items<br>fruits.append("orange")<br><br># Removing items<br>fruits.remove("banana")</code>
+                    </div>
+                    
+                    <div class="tip">
+                        <strong>💡 Note:</strong> Python uses 0-based indexing. The first item is at index 0, not 1!
+                    </div>
+                    
+                    <div class="try-it">
+                        <h4>✏️ Try it yourself:</h4>
+                        <p>Create a list of your top 3 favorite movies and print the second one:</p>
+                        <textarea id="code5">movies = ["Inception", "The Matrix", "Interstellar"]
+print("My second favorite movie is:", movies[1])
+movies.append("Avatar")
+print("Updated list:", movies)</textarea>
+                        <button onclick="runCode(5)">▶ Run Code</button>
+                        <button onclick="resetCode(5)">↺ Reset</button>
+                        <div class="output" id="output5">Click "Run Code" to see the result!</div>
+                    </div>
+                </div>
+                
+                <div class="lesson">
+                    <h2>Lesson 7: Conditionals 🔀</h2>
+                    <p>Make decisions in your code using if, elif, and else statements!</p>
+                    
+                    <div class="code-block">
+                        <code>age = 18<br><br>if age >= 18:<br>    print("You can vote!")<br>elif age >= 16:<br>    print("Almost there!")<br>else:<br>    print("Too young to vote")</code>
+                    </div>
+                    
+                    <h3>Comparison operators:</h3>
+                    <ul>
+                        <li><code>==</code> equal to</li>
+                        <li><code>!=</code> not equal to</li>
+                        <li><code>&gt;</code> greater than</li>
+                        <li><code>&lt;</code> less than</li>
+                        <li><code>&gt;=</code> greater than or equal</li>
+                        <li><code>&lt;=</code> less than or equal</li>
+                    </ul>
+                    
+                    <div class="try-it">
+                        <h4>✏️ Try it yourself:</h4>
+                        <p>Write code to check if a number is positive, negative, or zero:</p>
+                        <textarea id="code6">number = 5
+
+if number > 0:
+    print("Positive!")
+elif number < 0:
+    print("Negative!")
+else:
+    print("Zero!")</textarea>
+                        <button onclick="runCode(6)">▶ Run Code</button>
+                        <button onclick="resetCode(6)">↺ Reset</button>
+                        <div class="output" id="output6">Click "Run Code" to see the result!</div>
+                    </div>
+                </div>
+                
+                <div class="lesson">
+                    <h2>Lesson 8: Loops 🔄</h2>
+                    <p>Loops let you repeat code multiple times without writing it over and over!</p>
+                    
+                    <h3>For loops:</h3>
+                    <div class="code-block">
+                        <code># Loop through a list<br>fruits = ["apple", "banana", "cherry"]<br>for fruit in fruits:<br>    print(fruit)<br><br># Loop through a range<br>for i in range(5):<br>    print(i)  # Prints 0, 1, 2, 3, 4</code>
+                    </div>
+                    
+                    <h3>While loops:</h3>
+                    <div class="code-block">
+                        <code>count = 0<br>while count < 3:<br>    print(count)<br>    count += 1  # Same as count = count + 1</code>
+                    </div>
+                    
+                    <div class="try-it">
+                        <h4>✏️ Try it yourself:</h4>
+                        <p>Use a for loop to print numbers 1 through 5:</p>
+                        <textarea id="code7">for i in range(1, 6):
+    print(i)</textarea>
+                        <button onclick="runCode(7)">▶ Run Code</button>
+                        <button onclick="resetCode(7)">↺ Reset</button>
+                        <div class="output" id="output7">Click "Run Code" to see the result!</div>
+                    </div>
+                </div>
+                
+                <div class="lesson">
+                    <h2>Lesson 9: Functions 🎯</h2>
+                    <p>Functions are reusable blocks of code. Think of them as recipes you can use over and over!</p>
+                    
+                    <div class="code-block">
+                        <code>def greet(name):<br>    return f"Hello, {name}!"<br><br>message = greet("Alice")<br>print(message)  # "Hello, Alice!"<br><br># Function with multiple parameters<br>def add(a, b):<br>    return a + b<br><br>result = add(5, 3)<br>print(result)  # 8</code>
+                    </div>
+                    
+                    <div class="tip">
+                        <strong>💡 Key points:</strong> Functions start with <code>def</code>, take parameters (inputs), and can <code>return</code> values (outputs).
+                    </div>
+                    
+                    <div class="try-it">
+                        <h4>✏️ Try it yourself:</h4>
+                        <p>Create a function that calculates the area of a circle (π × r²):</p>
+                        <textarea id="code8">def circle_area(radius):
+    pi = 3.14159
+    return pi * radius ** 2
+
+area = circle_area(5)
+print(f"Area: {area}")</textarea>
+                        <button onclick="runCode(8)">▶ Run Code</button>
+                        <button onclick="resetCode(8)">↺ Reset</button>
+                        <div class="output" id="output8">Click "Run Code" to see the result!</div>
+                    </div>
+                </div>
+                
+                <div class="lesson">
+                    <h2>Lesson 10: Dictionaries 🗂️</h2>
+                    <p>Dictionaries store data in key-value pairs, like a real dictionary with words and definitions!</p>
+                    
+                    <div class="code-block">
+                        <code>person = {<br>    "name": "Alice",<br>    "age": 25,<br>    "city": "New York"<br>}<br><br>print(person["name"])  # "Alice"<br>print(person["age"])   # 25<br><br># Adding/updating<br>person["job"] = "Engineer"<br><br># Getting all keys<br>print(person.keys())<br><br># Getting all values<br>print(person.values())</code>
+                    </div>
+                    
+                    <div class="try-it">
+                        <h4>✏️ Try it yourself:</h4>
+                        <p>Create a dictionary for a book with title, author, and year. Print each value:</p>
+                        <textarea id="code9">book = {
+    "title": "1984",
+    "author": "George Orwell",
+    "year": 1949
+}
+
+print(f"Title: {book['title']}")
+print(f"Author: {book['author']}")
+print(f"Year: {book['year']}")</textarea>
+                        <button onclick="runCode(9)">▶ Run Code</button>
+                        <button onclick="resetCode(9)">↺ Reset</button>
+                        <div class="output" id="output9">Click "Run Code" to see the result!</div>
+                    </div>
+                    
+                    <div class="tip">
+                        <strong>🎉 Congratulations!</strong> You've completed all 10 lessons! You now know the fundamentals of Python. Keep practicing and building projects to improve your skills!
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
